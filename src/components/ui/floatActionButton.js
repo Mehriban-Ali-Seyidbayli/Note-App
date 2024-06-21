@@ -1,12 +1,12 @@
-import {Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {AppColors} from '../../theme/colors';
 import {screenWidth} from '../../utils/constants';
 import {Add} from 'iconsax-react-native';
 
-const FloatActionButton = () => {
+const FloatActionButton = ({onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Add size="50" color={AppColors.WHITE} />
     </TouchableOpacity>
   );

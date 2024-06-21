@@ -5,8 +5,9 @@ import Header from '../../components/router/header';
 import FloatActionButton from '../../components/ui/floatActionButton';
 import {mockData} from '../../utils/mockData';
 import NoteCard from '../../components/myNotes/noteCard';
+import {ADDNOTE} from '../../utils/routes';
 
-const MyNotes = () => {
+const MyNotes = ({navigation}) => {
   return (
     <SafeAreaView style={screenStyles.container}>
       <View style={screenStyles.container}>
@@ -16,7 +17,7 @@ const MyNotes = () => {
           renderItem={({item}) => <NoteCard item={item} />}
           keyExtractor={item => item.id}
         />
-        <FloatActionButton />
+        <FloatActionButton onPress={() => navigation.navigate(ADDNOTE)} />
       </View>
     </SafeAreaView>
   );

@@ -1,11 +1,14 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import React from 'react';
+import {screenStyles} from '../../styles/screenStyle';
 
-const AddNote = () => {
+const AddNote = ({route}) => {
   return (
-    <View style={styles.container}>
-      <Text>AddNote</Text>
-    </View>
+    <SafeAreaView style={screenStyles.container}>
+      <View style={screenStyles.container}>
+        <Text>add note</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
