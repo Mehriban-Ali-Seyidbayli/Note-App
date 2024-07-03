@@ -40,5 +40,6 @@ export const NoteCardStyle = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
+    marginHorizontal: 5,
   },
 });

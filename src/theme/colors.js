@@ -4,4 +4,5 @@ export const AppColors = {
   WHITE: '#fff',
   GRAY: '#9F9F9F',
   SCREENBACKGROUNDCOLOR: '#e3e3e3',
+  RED: '#f47373',
 };
