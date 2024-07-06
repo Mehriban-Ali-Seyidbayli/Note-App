@@ -28,6 +28,13 @@ export const NoteCardStyle = StyleSheet.create({
     borderRadius: 100,
     marginTop: 4,
   },
+  bubleRead: {
+    width: screenWidth * 0.035,
+    height: screenWidth * 0.035,
+    backgroundColor: AppColors.PRIMARY,
+    borderRadius: 100,
+    marginTop: 4,
+  },
   noteContainer: {flex: 10},
   title: {
     fontSize: 18,

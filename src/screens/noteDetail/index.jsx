@@ -1,12 +1,14 @@
 import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {screenStyles} from '../../styles/screenStyle';
 import EditButtons from '../../components/addNote/editButtons';
 import {AppColors} from '../../theme/colors';
+import MyContext from '../../context';
 
 const NoteDetail = ({route}) => {
   const {note} = route?.params;
   const [selectedStyle, setSelectedStyle] = useState(styles.normal);
+  const {updateNote} = useContext(MyContext);
 
   const changeStyleText = style => {
     switch (style) {
@@ -27,6 +29,12 @@ const NoteDetail = ({route}) => {
         break;
     }
   };
+  useEffect(() => {
+    updateNote(note.id, note);
+    return () => {
+      updateNote(note.id, note);
+    };
+  }, []);
 
   return (
     <SafeAreaView style={screenStyles.container}>

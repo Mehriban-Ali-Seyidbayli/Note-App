@@ -5,9 +5,11 @@ import Button from '../../components/ui/button';
 import {AppColors} from '../../theme/colors';
 import {getRandomNumber} from '../../utils/functions';
 import MyContext from '../../context';
+import {useNavigation} from '@react-navigation/native';
 
 const AddNote = ({route}) => {
   const {addNote, updateNote} = useContext(MyContext);
+  const navigation = useNavigation();
   const {note} = route?.params;
   const {type} = route?.params;
 
@@ -29,6 +31,7 @@ const AddNote = ({route}) => {
         date: '12:30',
       };
       addNote(form);
+      navigation.goBack();
     }
   };
 
@@ -43,8 +46,10 @@ const AddNote = ({route}) => {
         title: title,
         description: description,
         date: '12:30',
+        read: false,
       };
       updateNote(note.id, form);
+      navigation.goBack();
     }
   };
   return (

@@ -12,24 +12,28 @@ const Provider = ({children}) => {
       title: 'Design Engineer',
       description: 'First note description',
       date: '12:20 pm',
+      read: false,
     },
     {
       id: 2,
       title: 'Software Engineer',
       description: 'Second note description',
       date: '12:20 pm',
+      read: false,
     },
     {
       id: 3,
       title: 'Content Writer',
       description: 'Third note description',
       date: '12:20 pm',
+      read: false,
     },
     {
       id: 4,
       title: 'Data Engineer',
       description: 'Fouth note description',
       date: '12:20 pm',
+      read: false,
     },
   ]);
 
@@ -47,6 +51,7 @@ const Provider = ({children}) => {
     if (id) {
       const filteredNotes = notes.filter(item => item.id !== id);
       setNotes(filteredNotes);
+      Alert.alert('Note deleted successfully!');
     } else {
       Alert.alert("There isn't a note like this.");
     }
@@ -54,10 +59,17 @@ const Provider = ({children}) => {
   const updateNote = (id, item) => {
     const updatedItems = notes.map(note =>
       note.id === id
-        ? {...note, title: item.title, description: item.description}
+        ? {
+            ...note,
+            title: item.title,
+            description: item.description,
+            read: true,
+            date: '20:00',
+          }
         : note,
     );
     setNotes(updatedItems);
+    Alert.alert('Your note updated successfully!');
   };
 
   return (
